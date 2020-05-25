@@ -37,14 +37,25 @@ var xVal = dps.length + 1;
 var yVal = 20;
 var y1Val=24;
 var y2Val = 24;
-var updateInterval = 1000;
+var updateInterval = 3000;
 class Dynamic extends Component {
 	constructor() {
 		super();
 		this.updateChart = this.updateChart.bind(this);
+		this.toggleDataSeries = this.toggleDataSeries.bind(this);
 	}
 	componentDidMount() {
+		this.updateChart(20);
 		setInterval(this.updateChart, updateInterval);
+	}
+	toggleDataSeries(e) {
+		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+			e.dataSeries.visible = false;
+		}
+		else {
+			e.dataSeries.visible = true;
+		}
+		this.chart.render();
 	}
 	updateChart() {
         var m = Math.floor((Math.random() * 15) + 5) -Math.floor((Math.random() * 20) + 1);
@@ -73,6 +84,7 @@ class Dynamic extends Component {
 	}
 	render() {
 		const options = {
+			zoomEnabled:true,
 			theme: "light2",
 			animationEnabled: true,
 			title:{
@@ -85,29 +97,14 @@ class Dynamic extends Component {
 				title: "Time"
 			},
 			axisY: {
-				title: "CPU",
+				title: "Percentage Usage",
 				titleFontColor: "#6D78AD",
 				lineColor: "#6D78AD",
 				labelFontColor: "#6D78AD",
 				tickColor: "#6D78AD",
 				includeZero: false
 			},
-			axisY2: {
-				title: "Memory Usage",
-				titleFontColor: "#51CDA0",
-				lineColor: "#51CDA0",
-				labelFontColor: "#51CDA0",
-				tickColor: "#51CDA0",
-				includeZero: false
-			},
-			axisY3: {
-				title: "Disk Usage",
-				titleFontColor: "#51CDA0",
-				lineColor: "#51CDA0",
-				labelFontColor: "#51CDA0",
-				tickColor: "#51CDA0",
-				includeZero: false
-			},
+			
 			toolTip: {
 				shared: true
 			},
