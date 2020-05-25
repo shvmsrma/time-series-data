@@ -1,3 +1,23 @@
+## To Run the Project 
+
+## yarn install
+
+## yarn electron -dev
+
+If there is error then install these three dependencies
+
+## yarn add electron electron-builder --dev
+
+## yarn add wait-on concurrently
+
+## yarn add electron-is-dev
+
+ and then run 
+
+ ## yarn electron -dev
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
