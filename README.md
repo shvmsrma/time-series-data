@@ -1,20 +1,20 @@
 ## To Run the Project 
 
-## yarn install
+## `yarn install`
 
-## yarn electron -dev
+## `yarn electron -dev`
 
 If there is error then install these three dependencies
 
-## yarn add electron electron-builder --dev
+## `yarn add electron electron-builder --dev`
 
-## yarn add wait-on concurrently
+## `yarn add wait-on concurrently`
 
-## yarn add electron-is-dev
+## `yarn add electron-is-dev`
 
  and then run 
 
- ## yarn electron -dev
+ ## `yarn electron -dev`
 
 
 
